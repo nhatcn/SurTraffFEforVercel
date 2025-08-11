@@ -1,6 +1,6 @@
 "use client"
 
-import { Car, Clock, MapPin, AlertTriangle, CheckCircle, XCircle, Activity, ArrowLeft } from "lucide-react"
+import { Car, AlertTriangle, CheckCircle, XCircle, Activity, ArrowLeft } from "lucide-react"
 import { useState, useEffect, useRef } from "react"
 import { useNavigate } from "react-router-dom"
 import { getCookie } from "../utils/cookieUltil"

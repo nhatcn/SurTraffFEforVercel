@@ -96,7 +96,7 @@ const RequestButton: React.FC<RequestButtonProps> = ({ violationId, onStatusUpda
   const [success, setSuccess] = useState<boolean | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [violationStatus, setViolationStatus] = useState<string | null>(null);
-  const [showMobileMenu, setShowMobileMenu] = useState(false);
+
 
   useEffect(() => {
     const fetchViolationStatus = async () => {
@@ -1127,7 +1127,7 @@ export default function ViolationHistory() {
     } finally {
       setLoading(false);
     }
-  }, [selectedLicensePlate, refreshKey]);
+  }, [selectedLicensePlate]);
 
   useEffect(() => {
     loadAllVehicles();

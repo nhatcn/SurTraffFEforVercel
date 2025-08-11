@@ -102,7 +102,7 @@ const ViolationCustomerList: React.FC<ViolationListProps> = ({ userId }) => {
     } finally {
       setIsLoading(false);
     }
-  }, [userId, API_URL_BE]);
+  }, [userId]);
 
   useEffect(() => {
     loadViolations();

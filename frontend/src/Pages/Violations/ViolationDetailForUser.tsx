@@ -11,7 +11,6 @@ import {
   MapPin, 
   AlertTriangle, 
   Film, 
-  Download,
   Gauge,
   FileText,
   CheckCircle,
@@ -24,7 +23,7 @@ import axios, { AxiosError } from "axios";
 import Footer from "../../components/Layout/Footer";
 import { Header, MobileDropdownMenu } from "../../components/Layout/Menu";
 import logoImage from "../../asset/logo/screenshot_1749087176-removebg-preview.png";
-import { jsPDF } from "jspdf";
+
 
 // Extend jsPDF types to include jsPDF-autotable properties
 declare module "jspdf" {

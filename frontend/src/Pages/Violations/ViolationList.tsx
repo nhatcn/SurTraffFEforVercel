@@ -11,8 +11,8 @@ import ExportViolationsPDF from "./ExportViolationsPDF";
 import { motion, AnimatePresence } from "framer-motion";
 import { 
   Eye, Trash2, Camera, MapPin, Clock, Car, AlertTriangle, RefreshCw, TrendingUp, 
-  Filter, Download, BarChart3, Calendar, Search, X, ChevronDown, Sparkles,
-  Shield, Target, Zap, Activity, Globe, CheckCircle2, XCircle, ChevronLeft,
+  Filter, BarChart3, Calendar, Search, X, ChevronDown, Sparkles,
+  Target, Zap, Activity, Globe, CheckCircle2, XCircle, ChevronLeft,
   ChevronRight
 } from "lucide-react";
 import API_URL_BE from "../../components/Link/LinkAPI";
@@ -208,7 +208,7 @@ export default function ViolationList() {
     try {
       setLoading(true);
       setError(null);
-      const response = await axios.get(`${API_URL_BE}/api/violations`);
+      const response = await axios.get(`${API_URL_BE}api/violations`);
       const processedData = response.data.map((item: any) => ({
         ...item,
         violationDetails: item.violationDetails || [],
@@ -222,7 +222,7 @@ export default function ViolationList() {
     } finally {
       setLoading(false); // Fixed bug: was setLoading(true)
     }
-  }, [refreshKey]);
+  }, []);
 
   useEffect(() => {
     loadViolations();
@@ -231,7 +231,7 @@ export default function ViolationList() {
   // Handle delete
   const handleDelete = useCallback(async (id: number) => {
     try {
-      await axios.delete(`${API_URL_BE}/api/violations/${id}`);
+      await axios.delete(`${API_URL_BE}api/violations/${id}`);
       setViolations((prev) => prev.filter((v) => v.id !== id));
       setOpenDialog(false);
       toast.success("🗑️ Violation deleted successfully!", {

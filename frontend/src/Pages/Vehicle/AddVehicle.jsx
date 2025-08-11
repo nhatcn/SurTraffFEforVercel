@@ -68,7 +68,7 @@ const AddVehicle = () => {
     };
 
     fetchUserData();
-  }, [API_URL_BE]);
+  }, []);
 
   // Fetch vehicle types from API
   useEffect(() => {
@@ -86,7 +86,7 @@ const AddVehicle = () => {
       }
     };
     fetchVehicleTypes();
-  }, [API_URL_BE]);
+  }, []);
 
   // Fetch existing vehicles for the specific user to check license plates
   useEffect(() => {
@@ -106,7 +106,7 @@ const AddVehicle = () => {
     if (formData.userId) {
       fetchVehicles();
     }
-  }, [API_URL_BE, formData.userId]);
+  }, [ formData.userId]);
 
   const validateForm = () => {
     const newErrors = {};

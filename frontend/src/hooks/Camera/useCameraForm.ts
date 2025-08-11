@@ -60,7 +60,7 @@ export const useCameraForm = () => {
     };
 
     fetchViolationTypes();
-  }, []); // Empty dependency array - chỉ gọi 1 lần khi component mount
+  }, [violationTypeId]); // Empty dependency array - chỉ gọi 1 lần khi component mount
 
   const handleLocationSelect = (lat: number, lng: number, address: string) => {
     setLocation({

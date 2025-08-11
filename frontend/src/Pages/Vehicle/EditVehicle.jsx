@@ -69,7 +69,7 @@ setFormData((prev) => ({ ...prev, userId: user.userId.toString() }));
     };
 
     fetchUserData();
-  }, [API_URL_BE]);
+  }, []);
 
   // Fetch vehicle types
   useEffect(() => {
@@ -86,7 +86,7 @@ setFormData((prev) => ({ ...prev, userId: user.userId.toString() }));
       }
     };
     fetchVehicleTypes();
-  }, [API_URL_BE]);
+  }, []);
 
   // Fetch vehicles for specific user
   useEffect(() => {
@@ -106,7 +106,7 @@ setFormData((prev) => ({ ...prev, userId: user.userId.toString() }));
     if (formData.userId) {
       fetchVehicles();
     }
-  }, [API_URL_BE, formData.userId]);
+  }, [ formData.userId]);
 
   // Fetch vehicle details
   useEffect(() => {
@@ -145,7 +145,7 @@ setFormData((prev) => ({ ...prev, userId: user.userId.toString() }));
     if (id) {
       fetchVehicle();
     }
-  }, [API_URL_BE, id, formData.userId]);
+  }, [id, formData.userId]);
 
   const validateForm = () => {
     const newErrors = {};
